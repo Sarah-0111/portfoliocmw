@@ -1,23 +1,317 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8" />
-    <title>Sarah Dermouche - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarah Dermouche — Cheffe de projet digitale</title>
+    <link rel="icon" type="image/x-icon" href="image/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <input type="radio" id="fr" name="langue" value="français" checked>
-    <label for="français" id="">Français</label>
-    <br>
-    <input type="radio" id="en" name="langue" value="english">
-    <label for="english" id="">English</label>    
 
-    <h1 id="titre1">Bienvenue sur mon portfolio</h1>
-    <img id="image_bienvenue" src="" alt="">
-    <h2 id="titre2">Design Graphique</h2>
-    <h2 id="titre3">Photographie</h2>
-    <h2 id="titre4">Vidéo</h2>
+    <div class="cursor-dot"  id="cursor-dot"  aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
 
-<script src="langue.js"></script>
+    <!--NAVIGATION-->
+    <header class="nav-header" id="nav-header">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo"><em>Sarah</em> Dermouche</a>
+            <nav class="nav-links" id="nav-links" role="navigation" aria-label="Navigation principale">
+                <a href="#about"       id="nav-about">À propos</a>
+                <a href="#projets"     id="nav-projets">Projets</a>
+                <a href="#competences" id="nav-competences">Compétences</a>
+                <a href="#contact"     id="nav-contact">Contact</a>
+            </nav>
+            <div class="lang-switcher" role="group" aria-label="Sélection de langue">
+                <button class="lang-btn active" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+                <span class="lang-sep" aria-hidden="true">/</span>
+                <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+            </div>
+            <button class="nav-burger" id="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <div class="hero-rule" aria-hidden="true"></div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <p class="hero-tag" id="hero-tag">Cheffe de projet digitale · Paris</p>
+                <h1 class="hero-title" id="hero-title">
+                    Allier vision créative <br>et rigueur analytique<br><em>au service du digital.</em>
+                </h1>
+            </div>
+            <div class="hero-bottom">
+                <p class="hero-sub" id="hero-sub">
+                    Je conçois des expériences digitales cohérentes, pensées utilisateur, ancrées dans une vision créative et stratégique.
+                </p>
+                <a href="#projets" class="btn-primary" id="hero-cta">
+                    <span id="hero-cta-text">Voir mes projets</span>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                        <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll" aria-hidden="true">
+            <div class="hero-scroll-line"></div>
+            <span class="hero-scroll-label" id="hero-scroll-label">Défiler</span>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>UX Design</span><span class="msep">◆</span>
+            <span>Gestion de projet</span><span class="msep">◆</span>
+            <span>Social Media</span><span class="msep">◆</span>
+            <span>Figma</span><span class="msep">◆</span>
+            <span>Adobe Suite</span><span class="msep">◆</span>
+            <span>CMS & WordPress</span><span class="msep">◆</span>
+            <span>Identité visuelle</span><span class="msep">◆</span>
+            <span>Stratégie de contenu</span><span class="msep">◆</span>
+            <span>UX Design</span><span class="msep">◆</span>
+            <span>Gestion de projet</span><span class="msep">◆</span>
+            <span>Social Media</span><span class="msep">◆</span>
+            <span>Figma</span><span class="msep">◆</span>
+            <span>Adobe Suite</span><span class="msep">◆</span>
+            <span>CMS & WordPress</span><span class="msep">◆</span>
+            <span>Identité visuelle</span><span class="msep">◆</span>
+            <span>Stratégie de contenu</span><span class="msep">◆</span>
+        </div>
+    </div>
+
+    <!-- À PROPOS -->
+    <section class="section about" id="about">
+        <div class="section-inner">
+            <div class="section-label fade-in" id="about-label">01 — À propos</div>
+            <div class="about-grid">
+                <div class="about-text fade-in">
+                    <h2 class="section-title" id="about-title">Un profil entre<br>design et stratégie</h2>
+                    <p id="about-p1">Formée en graphisme à l'École Estienne, je poursuis actuellement un Master CMW (Cultures et Métiers du Web) à l'Université Gustave Eiffel, avant d'intégrer à la rentrée prochaine un Mastère 2 en Management Entrepreneurial de Projet Numérique et Stratégie Digitale à la Digital School of Paris. <br>Ce double parcours, entre création et stratégie, m'a permis de développer une vision à la fois créative et analytique du digital.</p>
+                    <p id="about-p2">J'interviens sur des projets mêlant gestion de projet, UX/UI, social media et production de contenu — avec le souci constant de l'utilisateur final et de la cohérence de marque.</p>
+                </div>
+                <div class="about-info fade-in">
+                    <div class="about-stats">
+                        <div class="about-stat">
+                            <span class="about-stat-num">2+</span>
+                            <span class="about-stat-label" id="about-stat1">ans d'expérience</span>
+                        </div>
+                        <div class="about-stat">
+                            <span class="about-stat-num">X+</span>
+                            <span class="about-stat-label" id="about-stat2">projets réalisés</span>
+                        </div>
+                    </div>
+                    <div class="about-tags">
+                        <span class="tag">UX Design</span>
+                        <span class="tag">Social Media</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">Adobe Suite</span>
+                        <span class="tag">CMS</span>
+                        <span class="tag">Gestion de projet</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section class="section projets" id="projets">
+        <div class="section-inner">
+            <div class="section-label fade-in" id="projets-label">02 — Projets</div>
+            <h2 class="section-title fade-in" id="projets-title">Sélection de travaux</h2>
+
+            <div class="projets-grid">
+
+                <article class="projet-card fade-in" data-projet="1">
+                    <div class="projet-visuel projet-visuel--1">
+                        <span class="projet-num" aria-hidden="true">01</span>
+                        <div class="projet-overlay">
+                            <span id="card-overlay-1">Voir le projet</span>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                                <path d="M3 9h12M11 4l5 5-5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="projet-body">
+                        <span class="projet-type" id="proj1-type">Réseaux Sociaux · Stratégie · Web</span>
+                        <h3 class="projet-title" id="proj1-title">Pilotage de la stratégie digitale du master CMW</h3>
+                        <p class="projet-desc" id="proj1-desc">Harmoniser l'image de marque du Master sur tous les canaux digitaux à partir d'une analyse des besoins utilisateurs.</p>
+                        <button class="projet-link open-detail" data-projet="1">
+                            <span id="proj1-btn">Voir le projet</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="projet-card fade-in" data-projet="2">
+                    <div class="projet-visuel projet-visuel--2">
+                        <span class="projet-num" aria-hidden="true">02</span>
+                        <div class="projet-overlay">
+                            <span id="card-overlay-2">Voir le projet</span>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                                <path d="M3 9h12M11 4l5 5-5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="projet-body">
+                        <span class="projet-type" id="proj2-type">Campagne de communication</span>
+                        <h3 class="projet-title" id="proj2-title">Campagne de notoriété pour une application mobile</h3>
+                        <p class="projet-desc" id="proj2-desc">Communication digitale et print via une guérilla marketing et un jeu de piste. </p>
+                        <button class="projet-link open-detail" data-projet="2">
+                            <span id="proj2-btn">Voir le projet</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="projet-card fade-in" data-projet="3">
+                    <div class="projet-visuel projet-visuel--3">
+                        <span class="projet-num" aria-hidden="true">03</span>
+                        <div class="projet-overlay">
+                            <span id="card-overlay-3">Voir le projet</span>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                                <path d="M3 9h12M11 4l5 5-5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="projet-body">
+                        <span class="projet-type" id="proj3-type">IDENTITÉ visuelle · CHARTE GRAPHIQUE</span>
+                        <h3 class="projet-title" id="proj3-title">Identité visuelle d'un groupe hospitalier</h3>
+                        <p class="projet-desc" id="proj3-desc">Conception de la nouvelle identité visuelle du GHNE (logo et déclinaisons) et de sa charte graphique.</p>
+                        <button class="projet-link open-detail" data-projet="3">
+                            <span id="proj3-btn">Voir le projet</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- DÉTAIL PROJET — panneau inline sous la grille -->
+            <div class="projet-detail" id="projet-detail">
+                <div class="detail-inner">
+                    <div class="detail-header">
+                        <div>
+                            <span class="detail-type" id="detail-type"></span>
+                            <h3 class="detail-titre" id="detail-titre"></h3>
+                        </div>
+                        <button class="detail-close" id="detail-close" aria-label="Fermer">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <path d="M3 3l12 12M15 3L3 15" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="detail-body">
+                        <div class="detail-images">
+                            <img src="image/cmw_1.png" alt="projet web" id="detail-img-main" class="detail-img-main">
+                            <div class="detail-img-row">
+                                <img src="image/cmw_2.png" alt="projet web" id="detail-img-sm1" class="detail-img-sm">
+                                <img src="image/cmw_3.png" alt="projet web" id="detail-img-sm2" class="detail-img-sm">
+                            </div>
+                        </div>
+                        <div class="detail-info">
+                            <dl class="detail-meta">
+                                <div class="detail-meta-item">
+                                    <dt id="detail-label-role">Rôle</dt>
+                                    <dd id="detail-role"></dd>
+                                </div>
+                                <div class="detail-meta-item">
+                                    <dt id="detail-label-tools">Outils</dt>
+                                    <dd id="detail-tools"></dd>
+                                </div>
+                                <div class="detail-meta-item">
+                                    <dt id="detail-label-year">Année</dt>
+                                    <dd id="detail-year"></dd>
+                                </div>
+                            </dl>
+                            <p id="detail-desc"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section class="section competences" id="competences">
+        <div class="section-inner">
+            <div class="section-label fade-in" id="comp-label">03 — Compétences</div>
+            <h2 class="section-title fade-in" id="comp-title">Ce que je sais faire</h2>
+            <div class="comp-grid">
+                <div class="comp-col fade-in">
+                    <h3 class="comp-cat" id="comp-cat1">Gestion de projet</h3>
+                    <ul class="comp-list" id="comp-list1">
+                        <li>Planification & coordination</li>
+                        <li>Brief créatif</li>
+                        <li>Suivi de production</li>
+                        <li>Notion, Trello, Jira</li>
+                    </ul>
+                </div>
+                <div class="comp-col fade-in">
+                    <h3 class="comp-cat" id="comp-cat2">Design & UX</h3>
+                    <ul class="comp-list" id="comp-list2">
+                        <li>Figma — maquettes & prototypes</li>
+                        <li>Adobe Ps / Ai / Id</li>
+                        <li>Audit UX & parcours utilisateur</li>
+                        <li>Identité visuelle & Charte graphique</li>
+                    </ul>
+                </div>
+                <div class="comp-col fade-in">
+                    <h3 class="comp-cat" id="comp-cat3">Digital & Web</h3>
+                    <ul class="comp-list" id="comp-list3">
+                        <li>HTML / CSS / JavaScript</li>
+                        <li>WordPress, Webflow</li>
+                        <li>Analytics & reporting</li>
+                        <li>Meta Ads</li>
+                    </ul>
+                </div>
+                <div class="comp-col fade-in">
+                    <h3 class="comp-cat" id="comp-cat4">Contenu & Médias</h3>
+                    <ul class="comp-list" id="comp-list4">
+                        <li>Stratégie social media</li>
+                        <li>Rédaction</li>
+                        <li>Photographie</li>
+                        <li>Vidéo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+        <div class="section-inner contact-inner">
+            <div class="section-label fade-in" id="contact-label">04 — Contact</div>
+            <h2 class="section-title contact-title fade-in" id="contact-title">Travaillons ensemble</h2>
+            <p class="contact-sub fade-in" id="contact-sub">
+                En recherche d'alternance à partir d'octobre 2026.<br>N'hésitez pas à me contacter.
+            </p>
+            <a href="mailto:sarah.dermouche@gmail.com" class="contact-email fade-in" id="contact-cta">sarah.dermouche@gmail.com</a>
+            <div class="contact-socials fade-in">
+                <a href="https://www.linkedin.com/in/sarah-dermouche-789434256" target="_blank" rel="noopener" id="contact-li">LinkedIn</a>
+                <span aria-hidden="true">·</span>
+                <a href="https://drive.google.com/file/d/1WTOLE_AvUd5v7UBYGR7kVTP-qVGKapj3/view?usp=sharing" target="_blank" rel="noopener" id="contact-pt">Portfolio</a>
+                <span aria-hidden="true">·</span>
+                <a href="https://drive.google.com/file/d/1VS2-UaIOc5Win3-Kl8MZEmc8OgLvq18b/view?usp=sharing" target="_blank" rel="noopener" id="contact-cv">Télécharger le CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <span id="footer-text">© 2026 Sarah Dermouche — Portfolio</span>
+        <span class="footer-credit" id="footer-credit">Conçu & intégré par Sarah Dermouche</span>
+    </footer>
+
+    <script src="langue.js"></script>
+    <script src="scroll.js"></script>
 </body>
 </html>
