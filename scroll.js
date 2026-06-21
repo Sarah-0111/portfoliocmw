@@ -1,7 +1,6 @@
-/* SCROLL.JS — Comportements UI */
+/* SCROLL.JS */
 
-
-/* CURSEUR PERSONNALISÉ */
+/* CURSEUR PERSONNALISÉ developpé à l'aide de Claude AI */
 var dot  = document.getElementById("cursor-dot");
 var ring = document.getElementById("cursor-ring");
 var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
@@ -83,7 +82,7 @@ window.addEventListener("scroll", function() {
 });
 
 
-/* FADE-IN AU SCROLL */
+/* FADE-IN SCROLL */
 var fadeEls = document.querySelectorAll(".fade-in");
 var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
@@ -103,8 +102,7 @@ document.querySelectorAll(".comp-col").forEach(function(el, i) {
     el.style.transitionDelay = (i * 0.09) + "s";
 });
 
-
-/* DÉTAIL PROJET — panneau inline */
+/* DÉTAIL PROJET  */
 var detail      = document.getElementById("projet-detail");
 var detailClose = document.getElementById("detail-close");
 
@@ -119,37 +117,6 @@ function ouvrirDetail(numProjet) {
     document.getElementById("detail-tools").textContent = data.outils;
     document.getElementById("detail-year").textContent  = data.annee;
     document.getElementById("detail-desc").textContent  = data.desc;
-
-    /* Images */
-    var imgMain = document.getElementById("detail-img-main");
-    var imgSm1  = document.getElementById("detail-img-sm1");
-    var imgSm2  = document.getElementById("detail-img-sm2");
-
-    if (data.images && data.images[0]) {
-        imgMain.src = data.images[0];
-        imgMain.style.backgroundColor = "";
-        imgMain.style.display = "block";
-    } else {
-        imgMain.src = "";
-        imgMain.style.backgroundColor = data.couleurs[0];
-        imgMain.style.display = "block";
-    }
-
-    if (data.images && data.images[1]) {
-        imgSm1.src = data.images[1];
-        imgSm1.style.backgroundColor = "";
-    } else {
-        imgSm1.src = "";
-        imgSm1.style.backgroundColor = data.couleurs[1];
-    }
-
-    if (data.images && data.images[2]) {
-        imgSm2.src = data.images[2];
-        imgSm2.style.backgroundColor = "";
-    } else {
-        imgSm2.src = "";
-        imgSm2.style.backgroundColor = data.couleurs[2];
-    }
 
     /* Ouvrir et scroller jusqu'au panneau */
     detail.classList.add("open");
@@ -167,7 +134,7 @@ document.querySelectorAll(".open-detail").forEach(function(btn) {
     btn.addEventListener("click", function(e) {
         e.stopPropagation();
         var num = parseInt(btn.getAttribute("data-projet"), 10);
-        /* Si le même projet est déjà ouvert, on ferme */
+        /* Si le même projet est déjà ouvert onle ferme */
         if (detail.classList.contains("open") && detail.dataset.projet == num) {
             fermerDetail();
         } else {

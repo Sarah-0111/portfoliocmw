@@ -37,8 +37,6 @@ body {
     line-height: 1.7;
     /* Masquer le curseur système (remplacé par le curseur custom) */
     cursor: none;
-    /* Texture grain leger */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
 }
 
 /* Masquer le curseur sur les éléments cliquables */
@@ -66,7 +64,8 @@ ul {
 }
 
 
-/* CURSEUR PERSONNALISÉ masqué sur écrans tactiles (pointer: coarse = doigts) */
+/* CURSEUR PERSONNALISÉ masqué sur écrans tactiles (pointer: coarse = doigts) 
+développé à l'aide de l'intelligence artificielle, Claude, Anthropic  */
 
 /* Point central — suit exactement la souris */
 .cursor-dot {
@@ -524,6 +523,10 @@ ul {
     color: var(--accent);
 }
 
+.about-video {
+    padding-top: 5%;
+}
+
 
 /*  PROJETS — Cartes avec overlay au survol */
 .projets {
@@ -786,9 +789,11 @@ ul {
     font-style: italic;
     color: rgba(255,255,255,0.18);
 }
+.mentions-legales a:hover {
+    color: var(--accent);
+}
 
-
-/* MODALE PROJET */
+/* PROJET */
 
 /* Fond semi-transparent couvre tout l'écran */
 .modal-overlay {

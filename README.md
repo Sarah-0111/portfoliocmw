@@ -1,5 +1,5 @@
 # portfoliocmw
-
+## fichier rédigé à l'aide de l'intelligence artificielle, assistant Claude, Anthropic
 Portfolio personnel bilingue FR / EN.  
 Conçu et intégré — HTML, CSS, JavaScript vanilla.
 

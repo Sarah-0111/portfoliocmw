@@ -91,6 +91,7 @@ var traductions = {
         "about-p2":     "J'interviens sur des projets mêlant gestion de projet, UX/UI, social media et production de contenu — avec le souci constant de l'utilisateur final et de la cohérence de marque.",
         "about-stat1":  "ans d'expérience",
         "about-stat2":  "projets réalisés",
+        "about-video-caption" : "En savoir plus sur mon parcours (projet étudiant)",
 
         "projets-label":  "02 — Projets",
         "projets-title":  "Sélection de travaux",
@@ -134,6 +135,7 @@ var traductions = {
         "detail-label-year":  "Année",
 
         "footer-text":   "© 2026 Sarah Dermouche — Portfolio",
+        "mentions-legales": "Mentions légales",
         "footer-credit": "Conçu & intégré par Sarah Dermouche"
     },
 
@@ -155,6 +157,7 @@ var traductions = {
         "about-p2":     "I work on projects combining project management, UX/UI, social media and content production — always with the end user and brand consistency in mind.",
         "about-stat1":  "years of experience",
         "about-stat2":  "completed projects",
+        "about-video-caption" : "Learn more about my academic background (student project)",
 
         "projets-label":  "02 — Projects",
         "projets-title":  "Selected works",
@@ -198,6 +201,7 @@ var traductions = {
         "detail-label-year":  "Year",
 
         "footer-text":   "© 2026 Sarah Dermouche — Portfolio",
+        "mentions-legales": "General Conditions of Use",
         "footer-credit": "Designed & coded by Sarah Dermouche"
     }
 };
